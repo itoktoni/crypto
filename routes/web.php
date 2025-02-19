@@ -43,8 +43,6 @@ Auth::routes(['verify' => true]);
 Route::get('/', [PublicController::class, 'index'])->name('public');
 Route::post('/checkout', [PublicController::class, 'checkout'])->middleware('auth')->name('checkout');
 
-Route::post('/webhook/tradingview', [WebhookController::class, 'webhookTradingView'])->name('webhook.tradingview');
-
 try {
     $routes = Query::groups();
 } catch (\Throwable $th) {
