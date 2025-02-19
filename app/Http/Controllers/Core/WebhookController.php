@@ -31,7 +31,7 @@ class WebhookController extends Controller
         }
     }
 
-    public function trandingview(Request $request)
+    public function tradingview(Request $request)
     {
         Webhook::create([
             'webhook_data' => json_encode($request->all())
