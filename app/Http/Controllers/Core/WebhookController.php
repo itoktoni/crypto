@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Core;
 use App\Dao\Models\Webhook;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 
@@ -33,6 +34,7 @@ class WebhookController extends Controller
 
     public function tradingview(Request $request)
     {
+        Log::info($request->all());
         Webhook::create([
             'webhook_data' => json_encode($request->all())
         ]);
