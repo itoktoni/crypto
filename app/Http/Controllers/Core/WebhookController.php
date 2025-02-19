@@ -34,9 +34,11 @@ class WebhookController extends Controller
 
     public function tradingview(Request $request)
     {
-        Log::info($request->all());
+
+        $json = file_get_contents('php://input');
+        Log::error($json);
         Webhook::create([
-            'webhook_data' => json_encode($request->all())
+            'webhook_data' => $json
         ]);
     }
 }
