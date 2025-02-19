@@ -4,6 +4,7 @@ use App\Dao\Enums\Core\MenuType;
 use App\Dao\Enums\Core\NotificationType;
 use App\Events\SendBroadcast;
 use App\Http\Controllers\Core\HomeController;
+use App\Http\Controllers\Core\WebhookController;
 use App\Http\Controllers\PublicController;
 use Buki\AutoRoute\AutoRouteFacade as AutoRoute;
 use Illuminate\Support\Facades\Auth;
@@ -41,6 +42,8 @@ Auth::routes(['verify' => true]);
 
 Route::get('/', [PublicController::class, 'index'])->name('public');
 Route::post('/checkout', [PublicController::class, 'checkout'])->middleware('auth')->name('checkout');
+
+Route::post('/webhook/tradingview', [WebhookController::class, 'webhookTradingView'])->name('webhook.tradingview');
 
 try {
     $routes = Query::groups();

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Core;
 
+use App\Dao\Models\Webhook;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Symfony\Component\Process\Exception\ProcessFailedException;
@@ -28,5 +29,12 @@ class WebhookController extends Controller
 
             return $process->getOutput();
         }
+    }
+
+    public function trandingview(Request $request)
+    {
+        Webhook::create([
+            'webhook_data' => json_encode($request->all())
+        ]);
     }
 }
