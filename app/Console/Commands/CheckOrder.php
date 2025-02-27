@@ -5,14 +5,14 @@ namespace App\Console\Commands;
 use App\Dao\Models\Core\User;
 use Illuminate\Console\Command;
 
-class Install extends Command
+class CheckOrder extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'notification:whatsapp';
+    protected $signature = 'check:order';
 
     /**
      * The console command description.
