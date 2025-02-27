@@ -6,8 +6,6 @@ use App\Dao\Enums\Core\LevelType;
 use App\Facades\Model\PermisionModel;
 use App\Facades\Model\RoleModel;
 use App\Facades\Model\UserModel;
-use App\Http\Function\CreateFunction;
-use App\Http\Function\UpdateFunction;
 use App\Http\Requests\Core\SortRequest;
 use App\Services\Master\SingleService;
 use Plugins\Core;
@@ -16,9 +14,6 @@ use Plugins\Response;
 
 class PermissionController extends MasterController
 {
-    use CreateFunction;
-    use UpdateFunction;
-
     public function __construct(PermisionModel $model, SingleService $service)
     {
         $this->model = $model::getModel();
@@ -61,7 +56,7 @@ class PermissionController extends MasterController
         $data_action = Core::getMethod($data->field_controller, $module) ?? [];
         $action = $data_action->pluck('primary', 'action')->toArray();
 
-        return moduleView(modulePathForm(path: self::$is_core), $this->share([
+        return moduleView(modulePathForm(), $this->share([
             'model' => $data,
             'action' => array_merge($action, [$module.'.empty' => 'Empty Data', $module.'.sort' => 'Sort Data']),
         ]));

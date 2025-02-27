@@ -31,10 +31,6 @@
 				 </a>
  			</li>
 
-			@livewire('progress')
-
-			<livewire:megaphone></livewire:megaphone>
-
 			<li class="nav-item profile">
 				<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">[ {{ Auth::user()->name }} ]</a>
 				<div class="dropdown-menu">

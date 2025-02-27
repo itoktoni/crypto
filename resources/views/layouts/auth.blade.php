@@ -5,7 +5,7 @@
 		<title>RegistrationForm_v9 by Colorlib</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		@vite(['resources/auth/css/style.scss'])
+		<link rel="stylesheet" href="{{ url('build/app-WSrpXqtN.css') }}" type="text/css">
 
 		<style>
 			.wrapper {

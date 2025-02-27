@@ -51,7 +51,7 @@ class GroupsController extends MasterController
         $data = $this->get($code, ['has_menu', 'has_menu.has_link']);
         $selected = $data->has_menu->pluck('system_menu_code') ?? [];
 
-        return moduleView(modulePathForm(path: self::$is_core), $this->share([
+        return moduleView(modulePathForm(), $this->share([
             'model' => $data,
             'selected' => $selected,
         ]));

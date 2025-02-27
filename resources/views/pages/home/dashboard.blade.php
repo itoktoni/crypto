@@ -63,21 +63,4 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-body">
-                    {!! $chart->container() !!}
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    @push('footer')
-    <script src="{{ @asset('vendor/larapex-charts/apexcharts.js') }}"></script>
-    {{ $chart->script() }}
-
-    @endpush
-
 </x-layout>

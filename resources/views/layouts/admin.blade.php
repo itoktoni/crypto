@@ -5,8 +5,7 @@
     @include('layouts.meta')
     @yield('head')
 
-    <link rel="stylesheet" href="{{ url('assets/css/app.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('vendor/megaphone/css/megaphone.css') }}">
+    <link rel="stylesheet" href="{{ url('build/assets/app-WSrpXqtN.css') }}" type="text/css">
     @yield('css')
     @livewireStyles
 </head>

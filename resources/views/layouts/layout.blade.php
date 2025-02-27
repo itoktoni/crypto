@@ -3,8 +3,7 @@
 @include('layouts.meta')
 
 <head>
-    @vite(['resources/sass/app.scss'])
-    @livewireStyles
+    <link rel="stylesheet" href="{{ url('build/assets/app-WSrpXqtN.css') }}" type="text/css">
 </head>
 
 <body class="fixed">

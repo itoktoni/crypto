@@ -80,14 +80,14 @@ class UserController extends MasterController
 
     public function getExportJob()
     {
-        return moduleView(modulePathForm(path: true), $this->share());
+        return moduleView(modulePathForm(), $this->share());
     }
 
     public function getProfile()
     {
         $this->beforeForm();
 
-        return moduleView(modulePathForm(name: 'form', path: 'core.profile'), $this->share([
+        return moduleView(modulePathForm(), $this->share([
             'model' => auth()->user(),
         ]));
     }

@@ -4,8 +4,6 @@ namespace App\Http\Controllers\Core;
 
 use App\Facades\Model\TeamModel;
 use App\Facades\Model\UserModel;
-use App\Http\Function\CreateFunction;
-use App\Http\Function\UpdateFunction;
 use App\Http\Requests\Core\GeneralRequest;
 use App\Services\Core\UpdateTeamService;
 use App\Services\Master\SingleService;
@@ -13,9 +11,6 @@ use Plugins\Response;
 
 class TeamController extends MasterController
 {
-    use CreateFunction;
-    use UpdateFunction;
-
     public function __construct(TeamModel $model, SingleService $service)
     {
         self::$service = self::$service ?? $service;
@@ -39,7 +34,7 @@ class TeamController extends MasterController
         $data = $this->get($code, ['has_lead']);
         $selected = $data->has_user->pluck('id') ?? [];
 
-        return moduleView(modulePathForm(path: self::$is_core), $this->share([
+        return moduleView(modulePathForm(), $this->share([
             'model' => $data,
             'selected' => $selected,
         ]));

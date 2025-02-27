@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Core\CryptoController;
 use App\Http\Controllers\Core\UserController;
 use App\Http\Controllers\Core\WebhookController;
 use Illuminate\Support\Facades\Route;
@@ -17,6 +18,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('login', [UserController::class, 'postLoginApi'])->name('postLoginApi');
 Route::post('deploy', [WebhookController::class, 'deploy'])->name('deploy');
-Route::post('tradingview', [WebhookController::class, 'tradingview'])->name('tradingview');
+Route::post('tradingview', [CryptoController::class, 'tradingview'])->name('tradingview');
 
 Route::middleware(['auth:sanctum'])->group(function () {});

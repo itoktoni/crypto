@@ -27,7 +27,20 @@ class Webhook extends SystemModel
      *
      * @var array<int, string>
      */
-    protected $fillable = ['webhook_id', 'webhook_nama', 'webhook_data'];
+    protected $fillable = [
+        'webhook_id',
+        'webhook_name',
+        'webhook_side',
+        'webhook_data',
+        'webhook_time',
+        'webhook_coin',
+        'webhook_side',
+        'webhook_price',
+        'webhook_open',
+        'webhook_close',
+        'webhook_high',
+        'webhook_low',
+    ];
 
 
 }

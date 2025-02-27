@@ -5,7 +5,10 @@ namespace App\Http\Controllers\Core;
 use App\Dao\Enums\Core\BooleanType;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Core\DeleteRequest;
+use App\Http\Requests\Core\GeneralRequest;
+use App\Services\Master\CreateService;
 use App\Services\Master\DeleteService;
+use App\Services\Master\UpdateService;
 use Plugins\Response;
 
 class MasterController extends Controller
@@ -64,7 +67,7 @@ class MasterController extends Controller
     {
         $data = $this->getData();
 
-        return moduleView(modulePathTable(core: self::$is_core), [
+        return moduleView(modulePathTable(), [
             'data' => $data,
             'fields' => $this->model::getModel()->getShowField(),
         ]);
@@ -90,7 +93,7 @@ class MasterController extends Controller
         $this->beforeForm();
         $this->beforeCreate();
 
-        return moduleView(modulePathForm(path: self::$is_core), $this->share());
+        return moduleView(modulePathForm(), $this->share());
     }
 
     public function getUpdate($code)
@@ -98,7 +101,7 @@ class MasterController extends Controller
         $this->beforeForm();
         $this->beforeUpdate($code);
 
-        return moduleView(modulePathForm(path: self::$is_core), $this->share([
+        return moduleView(modulePathForm(), $this->share([
             'model' => $this->get($code),
         ]));
     }

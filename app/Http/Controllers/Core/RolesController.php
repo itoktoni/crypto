@@ -54,7 +54,7 @@ class RolesController extends MasterController
         $data = $this->get($code, ['has_group']);
         $selected = $data->has_group->pluck('system_group_code') ?? [];
 
-        return moduleView(modulePathForm(path: self::$is_core), $this->share([
+        return moduleView(modulePathForm(), $this->share([
             'model' => $data,
             'selected' => $selected,
         ]));

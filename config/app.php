@@ -12,7 +12,7 @@ use GeoSot\EnvEditor\Facades\EnvEditor;
 use GeoSot\EnvEditor\ServiceProvider;
 use Ibex\CrudGenerator\CrudServiceProvider;
 use Illuminate\Support\Str;
-use MBarlow\Megaphone\MegaphoneServiceProvider;
+use Plugins\Helper;
 use Plugins\Query;
 use Plugins\Template;
 use Plugins\Views;
@@ -179,7 +179,6 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         App\Providers\WebDavServiceProvider::class,
-        Illuminate\Concurrency\ConcurrencyServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -194,7 +193,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\TelescopeServiceProvider::class,
-        BenSampo\Enum\EnumServiceProvider::class,
         Kyslik\ColumnSortable\ColumnSortableServiceProvider::class,
         CacheableAuthUserServiceProvider::class,
         LaravelWebConsoleServiceProvider::class,
@@ -202,7 +200,6 @@ return [
         ServiceProvider::class,
         FacadeServiceProviders::class,
         CrudServiceProvider::class,
-        MegaphoneServiceProvider::class,
     ],
 
     /*
@@ -264,6 +261,7 @@ return [
         'Str' => Str::class,
         'EnvEditor' => EnvEditor::class,
         'ModelGroup' => SystemGroup::class,
+        'Helper' => Helper::class,
     ],
 
 ];

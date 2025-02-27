@@ -21,7 +21,6 @@ use Illuminate\Notifications\Notifiable;
 use Kirschbaum\PowerJoins\PowerJoins;
 use Kyslik\ColumnSortable\Sortable;
 use Laravel\Sanctum\HasApiTokens;
-use MBarlow\Megaphone\HasMegaphone;
 use Mehradsadeghi\FilterQueryString\FilterQueryString as FilterQueryString;
 
 class User extends Authenticatable implements AuthMustVerifyEmail
@@ -33,7 +32,6 @@ class User extends Authenticatable implements AuthMustVerifyEmail
     use FilterQueryString;
     use HasApiTokens;
     use HasFactory;
-    use HasMegaphone;
     use MustVerifyEmail;
     use Notifiable;
     use OptionTrait;
